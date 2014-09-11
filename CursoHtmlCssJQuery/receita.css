@@ -1,0 +1,69 @@
+body{
+	background: #F5F0DC;
+	font-family: Helvetica;
+	width: 940px;
+}
+h2{
+	background:#CCFFCC;
+	background-color: -webkit-linear-gradient(top, #9C8F67, 3C7BE9B 30%);
+	background-color: -o-linear-gradient(top, #9C8F67, 3C7BE9B 30%);
+	border-radius: 15px;
+	border: 1px solid black;
+	color: #CFCFCF;
+}
+
+#tabelaIngredientes{
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	border:1px solid black;
+
+}
+
+figure{
+	background: white;
+	width: 450px;
+	padding: 15px;
+	text-align: center;
+	font-family: 'Comic Sans MS', cursive;
+	border:1px solid black;
+	box-shadow:5px 5px 3px rgba(0,0,0,0.7);
+	
+}
+
+figure:hover{
+    -moz-trasnform:rotate(-5deg);
+}
+
+#tabelaIngrendientes th{
+background-color: #ffffff;
+
+}
+
+
+nav ul li{
+	width: 740px;
+	float: left;
+	background: #C7BE9B;
+	margin-bottom: 5px;
+	background-color: black;
+	text-decoration: none;
+	list-style: none;
+	padding-left: 0;
+}
+
+nav:hover{
+	color: #9C8F67;
+}
+
+#impar{
+	background: white;
+}
+
+#par{
+	background: black;
+}
+#conteudo{
+	float: right;
+	width: 200px;
+}

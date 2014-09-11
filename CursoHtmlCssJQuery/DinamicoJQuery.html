@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/jquery.js"></script>
+		<title>Dinamico</title>
+	</head>
+	<body>
+		<h1>Treinmentos</h1>
+			<input type="button" id="botao-atualiza" value="Atualiza Lista " />
+			<ul id="lista">
+				<li>Logica</li>
+				<li>Banco de Dados</li>
+				<li>Linguagem de Programacao</li>
+			</ul>
+		<h3>Inserir novo Treinamento:</h3>
+		<input type="text" id="treinamento">
+		<input type="submit" id="botao-treinamento" value="Inserir" />			
+
+	<script>
+		$('#lista').on("dblclick", "li", function(){
+			
+			$(this).animate({ "margin-left" : "+=100"}, function(){
+				$(this).remove();
+			});
+		});	
+		$('#botao-treinamento').click(function(){
+
+			var texto = $('#treinamento');
+			var treinamento = texto.val();
+			texto.val('');
+
+			$('<li>').text(treinamento).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
+		});
+
+		$('#botao-atualiza').click(function(){
+
+			$.ajax({
+				url : 'http://mirrorfashion.caelum.com.br/treinamentos',
+				dataType: 'jsonp',
+				success: function(retorno){
+					$.each(retorno.treinamentos, function(){
+						var treinamento = this;
+						$('<li>').text(treinamento.nome).css({ 'color' : 'green'}).appendTo('#lista');
+					});
+				},
+			});
+
+			// $.get('http://mirrorfashion.caelum.com.br/treinamentos', 
+			// 	function(retorno){
+			// 		$.each(retorno.treinamentos, function(){
+			// 			var treinamento = this;
+			// 			$('<li>').text(treinamento.nome).css({ 'color' : 'green'}).appendTo('#lista');
+			// 		});
+			// 	}, 'jsonp');
+		});
+		
+	</script>
+	</body>
+</html>
+
+
+

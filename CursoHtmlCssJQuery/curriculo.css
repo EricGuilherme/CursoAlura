@@ -1,0 +1,33 @@
+
+h2{
+	background: #5599DD;
+	color: #DDDDDD;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}	
+#experiencias{
+	text-indent:50px;
+}
+#email{
+	text-decoration: underline;
+}
+.tec{
+
+}
+
+body{
+	font-family: sans-serif;
+	
+}
+#cabecario{
+	text-align: center;
+}
+
+#corpo{
+	width: 940px;
+	margin-right: auto;
+	margin-left: auto;
+
+}

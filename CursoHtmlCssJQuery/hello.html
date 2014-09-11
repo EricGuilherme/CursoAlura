@@ -1,0 +1,71 @@
+<! doctype html>
+<html>
+	<head>
+		<script src="js/jquery.js"></script>
+		<title>JQuery</title>
+	</head>
+	<body>
+
+		<h1>Helloo World ! </h1>
+
+
+		<h2 id="texto"></h2>
+		<input type="button" id="copiar" value="Exibir" />
+
+		
+		<script>
+
+			$('#copiar').click(function(){
+				$('#texto').text('Testes com JQuery');
+			});
+
+		</script>
+
+
+
+
+		<h2 id="texto">Teste com JQuery .click</h2>
+		<input type="text" name="nome" id="nome" />
+		<input type="submit" name="botao" id="botao" value="ok" />
+ 		<h3 id="texto-copiado"></h3>
+		
+		<script>
+			$('#texto').text('Testes com JQuery');
+
+			$('#botao').click(function(){
+				var nome = $('#nome').val();
+				$('#campo-nome')
+				$('#texto-copiado').text(nome);
+
+			})
+		</script>
+
+		<input id="botao-click" value="Mudar Texto Abaixo" type="button"/>
+	
+		<p id="descricao">jquery</p>
+
+		
+		<script>
+			$('#botao-click').click(function(){
+				$('#descricao').text('NovoTesto');
+			})
+		</script>
+		
+
+		<label>Nome:</label> 
+  			<input id="nome"  type="text" />
+  			<script>	
+    			$('#nome').on("blur", function() {
+        			var texto = $(this).val();
+        			if(!texto) {
+            			alert("Não deve ser vazio!");
+        			}
+    			});
+  			</script>
+
+
+			<input id="nome" type="text"/>
+			<input id="botao-copiar" type="submit" value="Copiar" />
+
+	</body>
+</html>
