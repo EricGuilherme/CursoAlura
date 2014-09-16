@@ -29,6 +29,5 @@ public class TestaInsercaoDeProduto {
 				}
 			}
 		}
-		System.out.println("A mesa foi inserida com sucesso " + mesa);
 	}
 }
