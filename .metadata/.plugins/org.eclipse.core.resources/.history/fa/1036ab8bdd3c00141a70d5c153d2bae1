@@ -1,0 +1,15 @@
+package br.com.bluesoft.jdbc;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class TestaConexao {
+
+	public static void main(String[] args) throws SQLException {
+		Connection connection = Database.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
+		System.out.println("Abrindo uma conex‹o !");
+		connection.close();
+			
+	}
+
+}

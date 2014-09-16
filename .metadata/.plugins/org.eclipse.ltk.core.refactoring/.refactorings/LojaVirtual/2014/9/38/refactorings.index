@@ -1,0 +1,5 @@
+1410783899463	Delete element
+1410785866873	Extract method 'getConnection'
+1410793581616	Extract method 'adiciona'
+1410802415794	Rename type 'Database'
+1410802977583	Move compilation unit

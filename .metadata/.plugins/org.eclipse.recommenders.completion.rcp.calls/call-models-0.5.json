@@ -1,0 +1,22 @@
+{
+  "/Users/eric/Documents/CursoAlura/LojaVirtual/src": {
+    "location": "/Users/eric/Documents/CursoAlura/LojaVirtual/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/eric/Documents/CursoAlura/LojaVirtual/src\u0027. Skipped."
+  },
+  "/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar",
+    "status": "RESOLVED"
+  },
+  "/Users/eric/Documents/CursoAlura/LojaVirtual/hsqldb.jar": {
+    "location": "/Users/eric/Documents/CursoAlura/LojaVirtual/hsqldb.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Users/eric/Documents/CursoAlura/LojaVirtual/hsqldb.jar\u0027. Neither fingerprint \u0027970fd7b8f635e2c19305160459649569655b843c\u0027 nor symbolic name \u0027org.hsqldb.hsqldb\u0027 are known."
+  },
+  "/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home/jre/lib/rt.jar": {
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home/jre/lib/rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home/jre/lib/rt.jar\u0027. Neither fingerprint \u0027e81e55967728283f678f519dd3929ef2b527c079\u0027 nor symbolic name \u0027rt\u0027 are known."
+  }
+}
