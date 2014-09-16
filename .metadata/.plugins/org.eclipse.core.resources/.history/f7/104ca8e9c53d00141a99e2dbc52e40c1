@@ -1,0 +1,36 @@
+package br.com.bluesoft.jdbc.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.bluesoft.jdbc.modelo.Categoria;
+
+public class CategoriaDAO {
+
+	private Connection connection;
+
+	public CategoriaDAO(Connection connection) {
+		this.connection = connection;
+	
+	}
+
+	public List<Categoria> lista() throws SQLException {
+		String sql = "select * from Categoria";
+		try(PreparedStatement stmt = connection.prepareStatement(sql)){
+			stmt.execute();
+			try(ResultSet resultado = stmt.getResultSet()){
+				while(resultado.next()){
+					int id = resultado.getInt("id");
+					String nome = resultado.getString("nome");
+					Categoria categoria = new Categoria(id, nome);
+					
+				}
+			}
+		}
+		return null;
+	}
+
+}

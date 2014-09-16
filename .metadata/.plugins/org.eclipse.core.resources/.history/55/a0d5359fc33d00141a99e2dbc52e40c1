@@ -1,0 +1,19 @@
+package br.com.bluesoft.jdbc;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import br.com.bluesoft.jdbc.dao.CategoriaDAO;
+
+public class TestaCategoria {
+
+	public static void main(String[] args) throws SQLException {
+		
+		try(Connection connection = new ConnectionPool().getConnection()){
+			List<Categoria> categorias = new CategoriaDAO(connection).lista();
+			for(Categoria categoria : categorias){
+				System.out.println(categoria.getNome());
+			}
+		}
+	}
+}

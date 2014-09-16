@@ -1,0 +1,5 @@
+package br.com.bluesoft.jdbc;
+
+public class BancoDeProdutos {
+
+}

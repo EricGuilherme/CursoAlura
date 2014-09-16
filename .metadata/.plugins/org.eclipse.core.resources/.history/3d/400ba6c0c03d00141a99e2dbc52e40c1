@@ -1,0 +1,10 @@
+package br.com.bluesoft.jdbc;
+
+public class TestaCategoria {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}
