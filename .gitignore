@@ -1,3 +1,9 @@
 .metadata/
 Servers/
 produtos/.settings/
+produtos/.classpath
+produtos/build/
+gerenciador/.settings/
+gerenciador/build
+gerenciador/.classpath
+gerenciador/.project

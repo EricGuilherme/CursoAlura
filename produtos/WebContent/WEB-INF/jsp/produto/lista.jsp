@@ -18,40 +18,54 @@
 			$("#produto" + id).remove();
 		}
 	</script>
-
+	
 	<h1>Produtos</h1>
+	<h2><fmt:message key="mensagem.bemvindo" /></h2>
 	<div id="mensagem"></div>
 	<table width="100%">
 		<tr>
+			<td width="10%">#</td> 
 			<td width="20%">Nome</td>
 			<td>Preco</td>
 			<td>Descricao</td>
 			<td>Data de Inicio da Venda</td>
-			<td>Usado?</td>
+			<td>Usado</td>
 			<td width="20%">Remover?</td>
 		</tr>
 		
-		<%
-			List<Produto> produtoList = (List<Produto>) request.getAttribute("produtoList");
-			for(Produto p : produtoList) {
-		%>
-		
-			<tr id="produto<%= p.getId() %>">
-				<td><%= p.getNome().toUpperCase() %></td>
-				<td><%= p.getPreco() %></td>
-				<td><%= p.getDescricao() %></td>
-				<td><%= p.getDataInicioVenda().getTime() %></td>
-				<% if(p.isUsado()) { %>
-				<td>Sim</td>
-				<% } else { %>
-				<td>Não</td>
-				<% } %>
-				<td><a href="#" onclick="return removeProduto(<%= p.getId() %>)">Remover</a></td>
+			<c:forEach var="p" items="${produtoList}" varStatus="st">		
+			<tr id="$produto${p.id}">
+				<td>"${st.count}"</td>
+				<td>${p.nome.toUpperCase()}</td>
+				<td><fmt:formatNumber type="currency" value="${p.preco}"/></td>
+				<td>"${p.descricao}"</td>
+				<td> <fmt:formatDate pattern="EEEE, dd 'de' MMMM 'de' yyyy" value = "${p.dataInicioVenda.time}" /></td>
+				<c:choose>
+					<c:when test="${p.usado}">
+						<td>Sim</td>
+					</c:when>
+					<c:otherwise>
+						<td> Não </td>
+					</c:otherwise>
+				</c:choose>
+				
+				<%-- <c:if test="${p.usado}">
+					<td>Sim</td>
+				</c:if>
+				<c:if test="${not p.usado}">
+					<td>Não</td>
+				</c:if>	 --%>
+				<td><a href="#" onclick="return removeProduto(${p.id})">Remover</a></td>
 			</tr>
-		<%
-			}
-		%>
+			</c:forEach>
+			
+			<c:set var="nome" value="João da Silva" />
+			<c:out value="${nome}" />
 	</table>
-	<a href="/produtos/produto/formulario">Adicionar um produto</a>
+	
+<c:url value="/produto/formulario" var="linkProduto" />
+<a href="${linkProduto}"><fmt:message key="mensagem.novoProduto" /></a>	
+	
+	<c:import url="../_comum/rodape.jsp" />
 </body>
 </html>
