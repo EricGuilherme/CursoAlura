@@ -1,7 +1,0 @@
-package br.com.bluesoft.jdbc;
-
-public interface Connection {
-	
-	Result execute(String sql);
-
-}

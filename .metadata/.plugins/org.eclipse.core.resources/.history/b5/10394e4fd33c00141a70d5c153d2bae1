@@ -1,9 +1,0 @@
-package br.com.bluesoft.jdbc;
-
-import javax.naming.spi.DirStateFactory.Result;
-
-public interface Connection {
-	
-	Result execute(String sql);
-
-}

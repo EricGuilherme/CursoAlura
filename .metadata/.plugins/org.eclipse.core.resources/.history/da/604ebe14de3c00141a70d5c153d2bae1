@@ -1,9 +1,0 @@
-package br.com.bluesoft.jdbc;
-
-import java.sql.Connection;
-
-public class TestaInsercao {
-	
-	Connection connection = Database.getConnection();
-	
-}
