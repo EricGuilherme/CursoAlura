@@ -19,3 +19,4 @@ public class NovaEmpresa implements Tarefa{
 		return "/WEB-INF/paginas/novaEmpresa.jsp";
 	}
 }
+	
