@@ -17,24 +17,11 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring-context.xml</param-value>
-		</init-param>
+		</init-param>	
 	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>spring mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-		
-		<element>
-			<bean id="conversionService"
-				class="org.springframework.context.support.ConversionServiceFactoryBean">
-				<property name="converters">
-					<list>
-						<bean
-							class="br.com.caelum.contas.StringToEnumConverterFactory" />
-					</list>
-				</property>
-			</bean>
-		</element>
-
 </web-app>

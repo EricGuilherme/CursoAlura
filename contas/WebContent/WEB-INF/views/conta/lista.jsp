@@ -10,8 +10,6 @@
 <title></title>
 </head>
 <body>
-	
-
 		<table>
 			<tr>
 				<th>Código</th>
@@ -20,26 +18,29 @@
 				<th>Tipo</th>
 				<th>Pago ?</th>
 				<th>Data de Pagamento</th>
+				<th>Ações</th>
+				
 			</tr>
+			<c:forEach items="${contas}" var="conta">
 			<tr>	
-				<c:forEach items="${todasContas}" var="conta">
 					<td>"${conta.id}"</td>
 					<td>"${conta.descricao}"</td>
 					<td>"${conta.valor}"</td>
-					<td>"${conta.tipo}"</td>
+					<td>"${conta.id}"></td>
 					<td>
-						<c:if test="${conta.pago}">
-							Pago
-						</c:if>
-						<c:if test="${not conta.pago}">
-							Não Pago
-						</c:if>		
-					</td>
-					<td>
-						<fmt:formatDate value = "${conta.dataPagamento.time}" pattern="dd/MM/yyyy" /> 
-					</td>
-				</c:forEach>
-			</tr>
+            			<c:if test="${conta.paga eq false}">
+           					Não paga
+            			</c:if>
+            			<c:if test="${conta.paga eq true }">
+            				Paga!
+            			</c:if>
+            		</td>
+            <td><fmt:formatDate value="${conta.dataPagamento.time}" pattern="dd/MM/yyyy"/></td>
+            <td>
+            	<a href="removeConta?id=${conta.id}"> Remover </a>
+            </td>
+        </tr>        
+        </c:forEach>
 		</table>	
 </body>
 </html>

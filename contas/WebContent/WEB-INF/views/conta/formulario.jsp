@@ -10,7 +10,7 @@
 
 	<h3>Adicionar Contas</h3>
 
-	<form action="adicionaConta" mehtod = "post">
+	<form action="adicionaConta" method = "post">
 		Descricao: 
 		<br/> 
 		<textarea rows="5" cols="100"  name="descricao"></textarea>
