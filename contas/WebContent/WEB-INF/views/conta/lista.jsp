@@ -8,6 +8,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title></title>
+<script src="resources/js/jquery.js"></script>
+<script type= "text/javascript">
+
+function deuCerto(dadosDaResposta) {
+	  alert("Conta paga com sucesso!");
+	}
+	function pagaAgora(id) {
+	  $.get("pagaConta?id="+id, deuCerto);
+	}
+	
+</script>
+
 </head>
 <body>
 		<table>
@@ -19,15 +31,15 @@
 				<th>Pago ?</th>
 				<th>Data de Pagamento</th>
 				<th>Ações</th>
-				
+								
 			</tr>
 			<c:forEach items="${contas}" var="conta">
 			<tr>	
-					<td>"${conta.id}"</td>
-					<td>"${conta.descricao}"</td>
-					<td>"${conta.valor}"</td>
-					<td>"${conta.id}"></td>
-					<td>
+					<td>${conta.id}</td>
+					<td>${conta.descricao}</td>
+					<td>${conta.valor}</td>
+					<td>${conta.tipo}</td>
+					<td id="#conta_" + ${conta.id}>
             			<c:if test="${conta.paga eq false}">
            					Não paga
             			</c:if>
@@ -37,7 +49,11 @@
             		</td>
             <td><fmt:formatDate value="${conta.dataPagamento.time}" pattern="dd/MM/yyyy"/></td>
             <td>
-            	<a href="removeConta?id=${conta.id}"> Remover </a>
+            	<a href="removeConta?id=${conta.id}"> Remover </a> | 
+            	<a href="mostraConta?id=${conta.id}">Alterar</a>  |
+            <c:if test="${conta.paga eq false}">
+    				<a href="#" onclick="pagaAgora(${conta.id});">Pagar</a>        
+            </c:if>
             </td>
         </tr>        
         </c:forEach>
