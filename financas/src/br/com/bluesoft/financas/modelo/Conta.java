@@ -1,9 +1,12 @@
 package br.com.bluesoft.financas.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -15,8 +18,16 @@ public class Conta {
 	private String numero;
 	private String banco;
 	private String agencia;
+	@OneToMany(mappedBy="conta")
+	private List<Movimentacao> movimentacao; 
 	
 	
+	public List<Movimentacao> getMovimentacao() {
+		return movimentacao;
+	}
+	public void setMovimentacao(List<Movimentacao> movimentacao) {
+		this.movimentacao = movimentacao;
+	}
 	public Integer getId() {
 		return id;
 	}

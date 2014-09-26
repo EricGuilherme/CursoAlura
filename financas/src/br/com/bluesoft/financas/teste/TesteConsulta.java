@@ -1,13 +1,11 @@
 package br.com.bluesoft.financas.teste;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.bluesoft.financas.modelo.Conta;
-import br.com.bluesoft.financas.modelo.Movimentacao;
-import br.com.bluesoft.financas.modelo.TipoMovimentacao;
 import br.com.bluesoft.financas.util.JPAUtil;
 
 public class TesteConsulta {
@@ -18,27 +16,14 @@ public class TesteConsulta {
 		
 		Conta conta = new Conta();
 		
-		conta.setId(2);
+		conta.setId(3);
+		
+			Query query = manager.createQuery("select max(m.valor) from Movimentacao m where m.conta = :pConta");
+			query.setParameter("pConta", conta);        
+			BigDecimal maiorGasto =  (BigDecimal) query.getSingleResult();
 
-		
-		
-		Query query = manager.createQuery("select m from Movimentacao m where m.conta=:pConta" 
-											+ " and m.tipoMovimentacao = :pTipo "
-											+ " order by m.valor desc ");
-		query.setParameter("pConta", conta);
-		query.setParameter("pTipo", TipoMovimentacao.SAIDA);
-
-		List<Movimentacao> movimentacoes = query.getResultList();
-		
-		for (Movimentacao m : movimentacoes) {
+			System.out.println("A conta possui " + maiorGasto + " movimentações.");
 			
-			System.out.println("Descricao: " + m.getDescricao());
-			System.out.println("Valor: " + m.getValor());			
 		}
-		
-		
-		
-		
 	}
 
-}
