@@ -13,7 +13,7 @@
 				<li>Linguagem de Programacao</li>
 			</ul>
 		<h3>Inserir novo Treinamento:</h3>
-		<input type="text" id="treinamento">
+		<input type="text" id=" ">
 		<input type="submit" id="botao-treinamento" value="Inserir" />			
 
 	<script>
@@ -29,10 +29,10 @@
 			var treinamento = texto.val();
 			texto.val('');
 
-			$('<li>').text(treinamento).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
+			$('<li>').text(treinamentos).css({ 'color' : 'blue', 'background-color' : 'lightgrey'}).appendTo('#lista');
 		});
 
-		$('#botao-atualiza').click(function(){
+		$('#botao-atualiza').click(function(){		
 
 			$.ajax({
 				url : 'http://mirrorfashion.caelum.com.br/treinamentos',
@@ -57,6 +57,8 @@
 	</script>
 	</body>
 </html>
+
+pois continuamos contando o produto camiseta como um item de entrega em São Paulo.
 
 
 
