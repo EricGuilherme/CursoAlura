@@ -37,6 +37,9 @@ td {
 	border-bottom: 1px solid #ddd;
 }
 
+#mostra-propaganda{
+	display: none;
+}
 
 .propaganda td {
 	background: #9F0;
@@ -55,7 +58,7 @@ td {
 	text-decoration: none;
 	text-transform: uppercase;
 	
-	display: inline-block;
+	display: none;
 	padding: 0.5em;
 }
 
@@ -84,4 +87,19 @@ input[type=button] {
 
 .recuperado{
 	background: red; 			;
+}
+
+.propaganda td {
+    background: #9F0;
+    padding: 1em 0.5em;
+    text-align: center;
+
+    color: #333;
+    font-style: italic;
+}
+
+.houvering{
+
+	background: #ccc;
+
 }
