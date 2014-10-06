@@ -57,4 +57,12 @@ public class FiltroDeLancesTest {
         assertEquals(10000, resultado.get(0).getValor(), 0.00001);
     } 
     
+    @Test
+    public void naoDeveAceitarDoisLancesSeguidosDoMesmoUsuario(){
+    	
+    	Usuario eric = new Usuario("Eric");
+    	
+    	
+    }
+    
 }
