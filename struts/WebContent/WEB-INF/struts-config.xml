@@ -1,0 +1,34 @@
+
+<!DOCTYPE struts-config PUBLIC
+         "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+         "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+ 	<form-beans>
+        <form-bean name="ContatoForm" type="br.com.caelum.struts.form.ContatoForm"/>
+ 		<form-bean name="RemoveContatoForm" type="br.com.caelum.struts.form.RemoveContatoForm" />
+    </form-beans>
+   
+   
+    <action-mappings>
+        <action path="/novoContato" name="ContatoForm" input="/novo.jsp" scope = "request" type="br.com.caelum.struts.action.AdicionaContatoAction">
+        	<forward name="ok" path="/listaContatos.do"/>
+        </action>
+        <action path="/teste" 
+            type="br.com.caelum.struts.action.TesteSimplesAction">
+            <forward name="ok" path="/exemplo.jsp"/>
+        </action>
+        <action path="/listaContatos" 
+       		type="br.com.caelum.struts.action.ListaContatosAction">
+        	<forward name="lista" path="/lista.jsp"/>
+        	 <forward name="vazia" path="/lista-vazia.jsp"/>
+    	</action>
+    	<action path="/removeContato" name="RemoveContatoForm"
+            type="br.com.caelum.struts.action.RemoveContatoAction">
+        	<forward name="ok" path="/listaContatos.do" />
+       	</action> 
+       	<action path="/mudaIdioma"  type="br.com.caelum.struts.action.MudaIdiomaAction">
+        	<forward name="ok" path="/testa-mensagens.jsp"/>
+   		</action>
+    </action-mappings>
+    <message-resources parameter="MessageResources" />
+</struts-config>
