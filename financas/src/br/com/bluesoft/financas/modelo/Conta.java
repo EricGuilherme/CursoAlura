@@ -21,7 +21,6 @@ public class Conta {
 	@OneToMany(mappedBy="conta")
 	private List<Movimentacao> movimentacao; 
 	
-	
 	public List<Movimentacao> getMovimentacao() {
 		return movimentacao;
 	}
@@ -58,7 +57,4 @@ public class Conta {
 	public void setAgencia(String agencia) {
 		this.agencia = agencia;
 	}
-
-	
-
 }

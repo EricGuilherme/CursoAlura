@@ -20,9 +20,7 @@ public class MovimentacaoDao {
 		
 		query.setParameter("pConta", conta);
 		return query.getSingleResult();
-
 				
-	}
-
-	
+	}	
 }
+ 
