@@ -18,6 +18,8 @@ import br.com.treinamento.estoque.modelo.Produto;
 
 @Controller
 public class ProdutoController {
+    
+    
 	@RequestMapping(value="/formulario")
 	public String formulario(){
 		
@@ -63,7 +65,9 @@ public class ProdutoController {
 	  return "redirect:listaProdutos";
 	}
 		
-	@RequestMapping ("/listaProdutos")
+	
+    @RequestMapping ("/listaProdutos")
+    
 	public ModelAndView lista(){
 		
 		ProdutoDAO dao = new ProdutoDAO();
@@ -76,3 +80,4 @@ public class ProdutoController {
 	
 	}
 }	
+    

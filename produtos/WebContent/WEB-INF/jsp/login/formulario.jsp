@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Login no Controle de Produtos</h2>
+	<h2>L</h2>
 	<form action="<c:url value="/login/autentica"/>">
 		Login: <input type="text" name="usuario.login"/><br />
 		Senha: <input type="password" name="usuario.senha"/><br />
 		<input type="submit" value="Autenticar"/>
 	</form>
 </body>
-</html>
+</html>	

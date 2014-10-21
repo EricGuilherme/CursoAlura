@@ -70,7 +70,7 @@ public class ContaController {
 	  return "redirect:listaContas";
 	}
 		
-	@RequestMapping ("/listaContas")
+	@RequestMapping ("/listaCotas")
 	public ModelAndView lista(){
 		
 		ContaDAO dao = new ContaDAO();

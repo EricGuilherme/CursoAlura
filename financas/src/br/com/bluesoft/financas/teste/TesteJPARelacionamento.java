@@ -29,6 +29,7 @@ public class TesteJPARelacionamento {
 
 		EntityManager manager = new JPAUtil().getEntityManager();
 		
+		
 		manager.getTransaction().begin();
 				
 		conta.setId(1);

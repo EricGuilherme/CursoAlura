@@ -1,13 +1,15 @@
 package br.com.caelum.produtos.controller;
 
+
 import java.util.List;
+
+import org.springframework.stereotype.Controller;
 
 import br.com.caelum.produtos.dao.ProdutoDao;
 import br.com.caelum.produtos.modelo.Produto;
-import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
-@Resource
+@Controller
 public class ProdutoController {
 
 	private Result result;
@@ -19,7 +21,6 @@ public class ProdutoController {
 	}
 
 	public List<Produto> lista() {
-		//Se quiser mudar o nome do atributo é só includar no result com o nome diferente
 		result.include("lista", dao.lista());
 		return dao.lista();
 	}
@@ -37,5 +38,4 @@ public class ProdutoController {
 		//removendo para utilizar AJAX na página
 		//result.redirectTo(ProdutoController.class).lista();
 	}
-
 }

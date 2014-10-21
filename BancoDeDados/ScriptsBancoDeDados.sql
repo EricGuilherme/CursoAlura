@@ -157,3 +157,4 @@ select nome, valor from compras inner join compradores on compras.id_comprador =
 select * from compras inner join compradores on compras.id_comprador = compradores.id where id_comprador = 1;
 
 delete from compras where id = 44;
+
